@@ -1,0 +1,3 @@
+from django.urls import path
+from .views import *
+urlpatterns=[path('admin/assign/',AdminAssignTripView.as_view()),path('admin/all/',AdminTripListView.as_view()),path('admin/<int:trip_id>/',AdminTripDetailView.as_view()),path('driver/my/',DriverAssignedTripListView.as_view()),path('driver/active/',DriverActiveTripView.as_view()),path('driver/earnings/',DriverEarningsReportView.as_view()),path('driver/<int:trip_id>/',DriverTripDetailView.as_view()),path('driver/<int:trip_id>/accept/',DriverAcceptTripView.as_view()),path('driver/<int:trip_id>/start/',DriverStartTripView.as_view()),path('driver/<int:trip_id>/complete/',DriverCompleteTripView.as_view()),path('my/',CustomerTripHistoryView.as_view()),path('<int:trip_id>/',CustomerTripDetailView.as_view())]

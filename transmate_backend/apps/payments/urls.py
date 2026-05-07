@@ -1,0 +1,3 @@
+from django.urls import path
+from .views import *
+urlpatterns=[path('',CustomerPaymentListCreateView.as_view()),path('<int:payment_id>/',CustomerPaymentDetailView.as_view()),path('<int:payment_id>/confirm/',CustomerConfirmPaymentView.as_view()),path('<int:payment_id>/initiate-gateway/',CustomerInitiateGatewayPaymentView.as_view()),path('<int:payment_id>/execute-bkash/',CustomerExecuteBkashPaymentView.as_view()),path('<int:payment_id>/invoice/',CustomerDownloadInvoiceView.as_view()),path('admin/all/',AdminPaymentListView.as_view()),path('admin/<int:payment_id>/',AdminPaymentDetailView.as_view()),path('admin/<int:payment_id>/refund/',AdminRefundPaymentView.as_view())]
